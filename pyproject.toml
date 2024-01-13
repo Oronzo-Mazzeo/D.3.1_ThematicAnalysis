@@ -1,0 +1,50 @@
+[project]
+name = "aiThematicAnalysis"
+version = "1.0.0"
+description="Thematic analysis of a text using the AI Engine ChatGPT."
+dependencies = [
+    "rich",
+    "rich_click",
+    "PyYaml",
+    "pandas",
+    "python-docx",
+    "nltk",
+    "scikit-learn",
+    "num2words",
+    "openai",
+    "striprtf",  
+    'setuptools',
+    'importlib-metadata; python_version>"3.10"',
+]
+
+authors = [{name="Oronzo Mazzeo",email="oronzo.mazzeo@unisalento.it"},
+    {name="Romolo Politi", email ="Romolo.Politi@inaf.it" }]
+license = {text = "GNU GPL ver3"} 
+readme = "README.md"
+
+
+keywords = ["AI", "Psichology", "Thematic Analysis"]
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
+]
+
+[project.urls]
+Repository = "https://github.com/Oronzo-Mazzeo/D.3.1_ThematicAnalysis"
+Changelog = "https://github.com/Oronzo-Mazzeo/D.3.1_ThematicAnalysis/CHANGELOG.md"
+
+[project.optional-dependencies]
+docs = ["sphinx"]
+
+[project.scripts]
+themAn = "aiThematicAnalysis.__main__:action"
+ph3-2-docx = "aiThematicAnalysis.docx_processor:action"
+
+[tool.setuptools.package-data]
+
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+
