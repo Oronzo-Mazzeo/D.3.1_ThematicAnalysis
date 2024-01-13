@@ -74,7 +74,7 @@ source venv/bin/activate
 
 ## Uso
 ```console
-preprocess.py [OPTIONS] [FILENAME] 
+themAn [OPTIONS] [FILENAME] 
 ```
 dove filename è l'intervista da analizzare.
 Nel caso si vogliano analizzare più interviste è necessario utiliuzzare l'opzione *--folder*.
