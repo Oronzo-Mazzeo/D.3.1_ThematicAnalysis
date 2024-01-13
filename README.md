@@ -55,9 +55,6 @@ Come conseguenza delle limitazioni d'utilizzo della versione gratuita dell'API d
 
 ## Installazione 
 
-> [!NOTE] 
-> Non è necessario indicare nulla sull'API KEY. il programma cerca nella home dell'utente un file chiamato *.themAnalysis.yml* se non lo trova chiede all'utente di inserire l'api key che poi viene salvata nel file.
-
 La procedura temporanea di installazione è la seguente:
 
 ```console
@@ -78,6 +75,14 @@ themAn [OPTIONS] [FILENAME]
 ```
 dove filename è l'intervista da analizzare.
 Nel caso si vogliano analizzare più interviste è necessario utiliuzzare l'opzione *--folder*.
+
+
+> [!NOTE] 
+> Al primo avvio del codice verrà richiesto l'inserimento dell'API Key necessaria per autenticarsi con il motore AI. La chiave verrà salvata nella home dell'utente in file chiamato *.themAnalysis.yml*.
+> 
+> Negli avvii successivi la chiave sarà letta direttamente dal file di configurazione.
+
+Di seguito sono riportati tutte le opzioni accettate dal codice con una breve spiegazione.
 
 |Parametro|Desscrizione|
 |---|---|
@@ -117,4 +122,24 @@ flowchart TD
     G --> H[Perform question Ph3]
     H -->I((END))
     L-->|False| I
+```
+
+Il primo step del software è la verifica dell’input. Come riportato nel file README.md  allegato, l’input può essere un singolo file, nel formato txt (ASCII) o rtf (Rich Text Format), o un folder (specificando l’opzione -f durante la chiamata dell’applicativo). Il software ne verifica l’esistenza e la compatibilità con il sistema. Dopo di che vengono effettuati una serie di preprocessamenti del testo al fine di semplificare la comprensione del testo da parte dell’algoritmo.
+
+Nel diagramma successivo viene illustrata la catena di preprocessing:
+
+```mermaid
+---
+title: Text Preprocessing
+---
+flowchart LR
+   A((Start))-->C[Read input]
+
+   C --> D[Convert to Lower Case]
+   D-->E[Convert Numbers to Words]
+   E-->F[Removing Puctuations]
+   F-->G[Removing Whitespaces]
+   G-->H[Remiving Stop Words]
+
+   H-->Z((End))
 ```
