@@ -98,3 +98,5 @@ Nel caso si vogliano analizzare più interviste è necessario utiliuzzare l'opzi
 [^2]: l'opzione viene ignorata se è selezionata l'opzione *--no-split*.
 [^3]: Il motore verrà dismesso agli inizi del 2024.
 [^4]: L'opzione verrà ignorata se si utilizza una AI diversa da ChatGPT.
+
+Nel successivo grafico è riportato lo schema di funzionamento del software:
