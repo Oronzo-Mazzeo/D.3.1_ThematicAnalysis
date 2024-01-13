@@ -100,3 +100,21 @@ Nel caso si vogliano analizzare più interviste è necessario utiliuzzare l'opzi
 [^4]: L'opzione verrà ignorata se si utilizza una AI diversa da ChatGPT.
 
 Nel successivo grafico è riportato lo schema di funzionamento del software:
+
+```mermaid
+---
+title: Software Schema
+---
+%%{init: {"flowchart": {"htmlLabels": false}} }%%
+flowchart TD
+    A((START)) -->L{Check the input} -->|True| B[Preprocessing]
+    B-->C[Split Chunck]
+    C-->D{Is the Last Chunck?}
+    D --False--> E[Perform question Ph2_1]
+    E --> F[/go to the next chunck/]
+    F -->D
+    D -->|True| G[Perform question Ph2_2]
+    G --> H[Perform question Ph3]
+    H -->I((END))
+    L-->|False| I
+```
