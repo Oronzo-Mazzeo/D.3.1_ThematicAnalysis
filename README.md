@@ -61,11 +61,15 @@ Come conseguenza delle limitazioni d'utilizzo della versione gratuita dell'API d
 La procedura temporanea di installazione è la seguente:
 
 ```code
-python3 -m venv venv
-source venv/bin/activate
-python3 -m pip install -r requirements.txt
+python3 -m pip install git+https://github.com/Oronzo-Mazzeo/D.3.1_ThematicAnalysis
 ```
 
+Se si vuole usare un ambiente virtuale, prima di procedere all'installazione, bisogna eseguire i seguenti comandi:
+
+```console
+python3 -m venv venv
+source venv/bin/activate
+```
 
 
 ## Uso
