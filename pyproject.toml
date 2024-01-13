@@ -40,7 +40,7 @@ themAn = "aiThematicAnalysis.__main__:action"
 ph3-2-docx = "aiThematicAnalysis.docx_processor:action"
 
 [tool.setuptools.package-data]
-
+aiThematicAnalysis =['questions.yml']
 
 [build-system]
 requires = ["setuptools", "setuptools-scm"]

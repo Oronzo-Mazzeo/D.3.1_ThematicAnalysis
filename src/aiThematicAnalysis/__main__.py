@@ -15,6 +15,7 @@ from rich.progress import BarColumn, Progress, SpinnerColumn, TimeElapsedColumn
 from rich.prompt import Prompt
 from rich.status import Status
 from striprtf.striprtf import rtf_to_text
+from importlib.resources import files
 
 console = Console()
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
@@ -57,7 +58,7 @@ configure=Configure()
 
 
 def reader():
-    with open('questions.yml') as f:
+    with open(files("aiThematicAnalysis").joinpath('questions.yml')) as f:
         dat = yaml.safe_load(f)
     return dat
 

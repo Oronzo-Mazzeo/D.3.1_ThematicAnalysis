@@ -60,7 +60,7 @@ Come conseguenza delle limitazioni d'utilizzo della versione gratuita dell'API d
 
 La procedura temporanea di installazione è la seguente:
 
-```code
+```console
 python3 -m pip install git+https://github.com/Oronzo-Mazzeo/D.3.1_ThematicAnalysis
 ```
 

@@ -1,0 +1,133 @@
+language:
+  en: english
+  it: italian
+questions:
+  en:
+   # main: 'Identify up to 3 most relevant themes in the following text, provide
+   #   a name for each theme in no more than 3 words, 4 lines meaningful and dense description
+   #   of the theme and a quote from the respondent for each theme non longer tha 7 lines.
+
+   #   Format the response as json object using fields name, description and quote'
+   #   #keeping names, descriptions and quotes together       in the json, anche keep them together in ''Themes''.
+
+   #   #'
+
+
+   # PHASE 1 FAMILIARIZING YOURSELF WITH YOUR DATA (Braun & Clarke, 2006)
+   #         Transcribing data (if necessary), reading and re-reading the data, noting down initial ideas.
+   # !!! NO CODE 
+
+
+   # PHASE 2 GENERATING INITIAL CODES (Braun & Clarke, 2006)
+   #         Coding interesting features of the data in a systematic fashion across the entire data set, 
+   #         collating data relevant to each code.
+
+   #[Asks the model to infer specific ‘codes’ from the data, without any prior knowledge. In the prompt, the word
+   #‘themes’ is used instead of ‘codes’ as it works better within the prompt of the model. However, for clarity in
+   #this phase we are in the process of trying to identify what in TA we would call ‘codes’. (De Paoli, 2023 - Figure 4, pg. 9)]
+    Ph2_1: "Identify up to 3 most relevant themes in the following text, provide
+      a name for each theme in no more than 3 words, 4 lines meaningful and dense description
+      of the theme and a quote from the respondent for each theme non longer than 5 lines.
+
+      Format the response as json object using three fields `name`, `description` and `quote`"
+      #Format the response as json object using fields name, description and quote'
+      #keeping names, descriptions and quotes together       in the json, anche keep them together in ''Themes''.
+
+      #'
+
+   #[Prompt used to reduce the list of codes by merging duplicates (De Paoli, 2023 - Figure 6, pg. 11)]
+    Ph2_2: "Determine which items in the following list of topics are entirely unique
+      Format the response as Json, groped in 'items' and separated keys 'topics' and 'indices'"
+  
+
+    # PHASE 3 SEARCHING FOR THEMES (Braun & Clarke, 2006)
+    #         Collating codes into potential themes, gathering all data relevant to each potential theme.
+
+#  #[Prompt used to infer themes from the existing set of codes (De Paoli, 2023 - Figure 7, pg. 17)]
+#    Ph3: "Determine how all the topics in the following list of topics can be grouped together,
+#      and topics can also be in more than one group.
+#
+#      Group all the topic numbers only and provide a name and a description for each groups
+#      
+#      Display the full list"
+
+  #[Prompt used to infer themes from the existing set of codes (De Paoli, 2023 - Figure 7, pg. 17)]
+    Ph3: "Determine how all the topics in the following list of topics can be grouped together,
+      and topics can also be in more than one group.
+
+      For each group and for each topic in the group, assign a weight (in a scale ranging from 1 to 10) to each topic 
+      based on its contribution to the specific group. Make a list containg the name of the group and the topics (whith
+      the associated weight) used to build the group. Give the response in 2500 characters.
+     
+      Group all the topic numbers only and provide a name and a description for each groups. Format the response as a JSON object with three fields: `Group`,  `description`, `topic`"
+      
+  #Display the full list"
+# 
+# >>>>>>> VERSIONE "SENPLIFICATA DA DeepL"
+# 
+#     Assign a weight (on a scale of 1 to 10) to each topic within each group based on its contribution. Create a list
+#   
+
+
+   # PHASE 4 REVIEWING THEMES (Braun & Clarke, 2006)
+   #         Checking if the themes work in relation to the coded extracts (Level 1) and the entire data set (Level 2), 
+   #         generating a thematic ‘map’ of the analysis.
+   # !!! NO CODE 
+
+   # PHASE 5 DEFINING AND NAMING THEMESE (Braun & Clarke, 2006)
+   #         Ongoing analysis to refine the specifics of each theme, and the overall story the analysis 
+   #         tells, generating clear definitions and names for each theme.
+
+   #        ------------------------------------------------------------
+   #>>>>>>> NON CHIARO!!!!!!!! LEGGERE De Paoli, 2023 - pg. 16 e pg. 17 <<<<<<<<<<<<<<<<
+   #        ------------------------------------------------------------
+
+    Ph5: 'Using all the topics in the list, give me a summary (in 2 sentences) and a name (5 words max) for the summary'
+
+   # PHASE 6 PRODUCING THE REPORT (Braun & Clarke, 2006)
+   #         The final opportunity for analysis. Selection of vivid, compelling extract examples, final analysis of selected extracts, 
+   #         relating back of the analysis to the research question and literature, producing a scholarly report of the analysis.
+   # !!! NO CODE 
+
+  it:
+   
+   # PHASE 1 FAMILIARIZING YOURSELF WITH YOUR DATA (Braun & Clarke, 2006)
+   #         Transcribing data (if necessary), reading and re-reading the data, noting down initial ideas.
+   # !!! NO CODE 
+
+   # PHASE 2 GENERATING INITIAL CODES (Braun & Clarke, 2006)
+   #         Coding interesting features of the data in a systematic fashion across the entire data set, 
+   #         collating data relevant to each code.
+    Ph2_1: 'Identifica i tre temi più rilevanti nel testo seguente, fornisci un nome formato da massimo 3 parole,
+     4 righe di descrizione significativa e densa e una citatazione, di lunghezza non superiore a 7 righe dalle 
+     risposte per ciascun tema.
+
+      Format the response as json object using fields name, description and quote'
+
+   #[Prompt used to reduce the list of codes by merging duplicates (De Paoli, 2023 - Figure 6, pg. 11)]
+    Ph2_2: "Determina quali elementi nel seguente elenco di argomenti sono completamente unici.
+      Formatta la risposta come json, raggruppando in 'elementi' e chiavi separate 'argomenti' e 'indici'"
+  
+
+    # PHASE 3 SEARCHING FOR THEMES (Braun & Clarke, 2006)
+    #         Collating codes into potential themes, gathering all data relevant to each potential theme.
+
+  #[Prompt used to infer themes from the existing set of codes (De Paoli, 2023 - Figure 7, pg. 17)]
+    Ph3: "Determina come tutti gli argomenti nel seguente elenco di argomenti possono essere raggruppati insieme,e gli argomenti posso inoltre essere in più di un gruppo.\n Raggruppa soltanto tutti i numeri degli argomenti e fornisci un nome e una descrizione per ogni gruppo.\n     
+      Visualizza l'elenco completa"
+
+   # PHASE 4 REVIEWING THEMES (Braun & Clarke, 2006)
+   #         Checking if the themes work in relation to the coded extracts (Level 1) and the entire data set (Level 2), 
+   #         generating a thematic ‘map’ of the analysis.
+   # !!! NO CODE 
+
+   # PHASE 5 DEFINING AND NAMING THEMESE (Braun & Clarke, 2006)
+   #         Ongoing analysis to refine the specifics of each theme, and the overall story the analysis 
+   #         tells, generating clear definitions and names for each theme.
+    Ph5: "Usando tutti gli argomenti dell'elenco, fornisci una sintesi  (in due frasi) e un nome (massimo 5 parole) per la sintesi."
+   # >>>>>> PROVARE ANCHE A TRADURRE summary in riassunto....
+
+   # PHASE 6 PRODUCING THE REPORT (Braun & Clarke, 2006)
+   #         The final opportunity for analysis. Selection of vivid, compelling extract examples, final analysis of selected extracts, 
+   #         relating back of the analysis to the research question and literature, producing a scholarly report of the analysis.
+   # !!! NO CODE 
