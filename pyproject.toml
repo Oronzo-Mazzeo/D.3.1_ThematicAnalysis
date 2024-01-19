@@ -43,8 +43,7 @@ ph3-2-docx = "aiThematicAnalysis.docx_processor:action"
 aiThematicAnalysis =['questions.yml']
 
 [build-system]
-requires = ["setuptools", "setuptools-scm"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools_scm]
 
