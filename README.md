@@ -44,10 +44,10 @@ Come conseguenza delle limitazioni d'utilizzo della versione gratuita dell'API d
 	3. rimozione degli spazi bianchi e stop-words (congiunzioni, articoli, etc.);
 	4. divisione del testo in chunk (di un certo numero di caratteri) in base ai limiti imposti dall'API di chatGPT.
 * **Analisi tematica del testo**
-* **Produzione di un file contentente in forma tabellare:**
+* **Produzione di un file contentente in forma tabellare (CSV[^1]):**
 	1. Nome del tema;
 	2. Descrizione del tema;
-	3. Tre estratti di testo significativi per ciascun tema.
+	3. Elenco dei *topics* rilevanti per ciascun tema.
 
 
 
@@ -55,10 +55,17 @@ Come conseguenza delle limitazioni d'utilizzo della versione gratuita dell'API d
 
 ## Installazione 
 
-La procedura temporanea di installazione è la seguente:
+La procedura di installazione è la seguente:
 
 ```console
-python3 -m pip install git+https://github.com/Oronzo-Mazzeo/D.3.1_ThematicAnalysis
+python3 -m pip install --upgrade git+https://github.com/Oronzo-Mazzeo/D.3.1_ThematicAnalysis
+```
+Nel caso in cui si utilizzino i file zip del delivery la procedura è:
+
+```console
+unzip D.3.1_ThematicAnalysis-ver_1.0.0.zip
+cd D.3.1_ThematicAnalysis-ver_1.0.0
+python3 -m pip install --upgrade .
 ```
 
 Se si vuole usare un ambiente virtuale, prima di procedere all'installazione, bisogna eseguire i seguenti comandi:
@@ -89,20 +96,21 @@ Di seguito sono riportati tutte le opzioni accettate dal codice con una breve sp
 | --folder, -f| Directory contenente le interviste|
 |--csv, -c| Inizia l'analisi a partire dal prodotto intermedio CSV|
 | --output, -o | Output filename. **Default:** *output.txt*|
-| --ai, -a | Seleziona il motore di intelligenza artificiale da usare.<br/> Valori ammessi: ChatGPT, Bard[^1]<br/> **Default:** *ChatGPT*|
+| --ai, -a | Seleziona il motore di intelligenza artificiale da usare.<br/> Valori ammessi: ChatGPT, Bard[^2]<br/> **Default:** *ChatGPT*|
 |--wait-time, -w| Numero di secondi tra le richieste. Necessario a caiusa delle limitazioni delle API gratuite. Può essre disabilitato impostando il valore a 0. **Deafult:** *20*.
 | --language ,-l | Selezione della lingua da utilizzare. <br/>Valori ammessi: *it*, *en*. <br/>**Default:** *en*|
 | --split/--no-split | Abilita o disabilita la divisione delle interviste in segmenti. **Default:** *split*|
 | --stopw/--no-stopw  | Abilita o disabilita la rimozione delle *stop words*. **Default:** *stopw*|
-| --n-words, -n | Numero di parole per ogni segmento [^2]. **Default:** *2000*|
-| --prefix, -p | Prefisso da per inomi dei file dei vari segmenti[^2]. **Default:** *chunk*|
-| --legacy, -L | Utilizza il motore AI *text-davinci-002*[^3] al posto di *gpt-3.5-turbo* [^4]|
+| --n-words, -n | Numero di parole per ogni segmento [^3]. **Default:** *2000*|
+| --prefix, -p | Prefisso da per inomi dei file dei vari segmenti[^3]. **Default:** *chunk*|
+| --legacy, -L | Utilizza il motore AI *text-davinci-002*[^4] al posto di *gpt-3.5-turbo* [^5]|
 | --help, -h| visualizza il messaggio di aiuto|
 
-[^1]: Solo parzialmente supportato.
-[^2]: l'opzione viene ignorata se è selezionata l'opzione *--no-split*.
-[^3]: Il motore verrà dismesso agli inizi del 2024.
-[^4]: L'opzione verrà ignorata se si utilizza una AI diversa da ChatGPT.
+[^1]: Nel package è disponibile un tool per la conversione del file CSV in formato DOCX. Il tool è chiamato *ph3-2-docx* e le istruzioni per utilizzarlo possono essere reperite tramite l'help (*ph3-2-docx --help*)).
+[^2]: Solo parzialmente supportato.
+[^3]: l'opzione viene ignorata se è selezionata l'opzione *--no-split*.
+[^4]: Il motore verrà dismesso agli inizi del 2024.
+[^5]: L'opzione verrà ignorata se si utilizza una AI diversa da ChatGPT.
 
 Nel successivo grafico è riportato lo schema di funzionamento del software:
 
